@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -76,6 +77,8 @@
         display: block;
         overflow: hidden;
         animation: fastReveal 2.9s ease-out forwards;
+        white-space: pre-wrap;       /* CSS3 */
+        word-wrap: break-word;       /* Internet Explorer 5.5+ */
       }
 
       @keyframes fastReveal {
@@ -195,6 +198,7 @@
         } */
 
       /* --- MOBILE RESPONSIVE --- */
+     /* --- MOBILE RESPONSIVE FIX --- */
       @media (max-width: 900px) {
         body {
           overflow-y: auto;
@@ -207,6 +211,21 @@
           min-height: 100vh;
           padding: 60px 30px;
         }
+
+        /* Fixed Code Container for Mobile */
+        .code-container {
+          padding: 15px;
+          overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        pre {
+          white-space: pre-wrap;       /* Forces the wrap */
+          word-wrap: break-word;       /* Breaks long strings if necessary */
+          font-size: 0.75rem;          /* Smaller font for better fit */
+          text-indent: -1.5em;         /* Creates a "hanging indent" */
+          padding-left: 1.5em;         /* Keeps wrapped lines aligned */
+        }
+
         .right-panel {
           min-height: 80vh;
           padding: 40px 20px;
@@ -214,6 +233,8 @@
         .image-container {
           max-width: 90%;
         }
+      
+        
       }
     </style>
   </head>
