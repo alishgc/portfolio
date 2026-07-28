@@ -1,0 +1,159 @@
+:root {
+  --bg:        #0f111a; 
+  --surface:   #181a24; 
+  --border:    #262938;
+  --ink:       #f0ede6;
+  --ink-dim:   #a0a6b8;
+  --accent:    #f5a73b;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html, body{ height:100%; }
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-mono);
+  overflow:hidden;
+}
+
+a{ color:inherit; text-decoration:none; }
+
+::selection{ background:var(--accent); color:#12141c; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+}
+
+/* ============================================
+   LOGO — fixed top-left
+============================================ */
+.logo{
+  position:fixed;
+  top:24px;
+  left:24px;
+  z-index:50;
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:1.05rem;
+  color:var(--ink);
+}
+.logo .dot{ color:var(--accent); }
+
+/* ============================================
+   PRELOADER — multilingual greeting
+============================================ */
+.preloader{
+  position:fixed; inset:0; z-index:100;
+  background:var(--bg);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:22px;
+  transition:transform 0.8s cubic-bezier(.76,0,.24,1);
+}
+.preloader.is-done{ transform:translateY(-100%); }
+
+.preloader__word{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(2rem, 7vw, 4rem);
+}
+
+.preloader__bar{
+  width:min(180px, 40vw);
+  height:2px;
+  background:rgba(234,230,221,0.15);
+  border-radius:2px;
+  overflow:hidden;
+}
+.preloader__bar span{
+  display:block;
+  height:100%;
+  width:0%;
+  background:var(--accent);
+}
+
+body.is-loading{ overflow:hidden; }
+
+/* ============================================
+   PAGE — single viewport, no scroll
+============================================ */
+.page{
+  height:100svh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px;
+}
+
+.center{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:22px;
+}
+
+.name{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(3rem, 12vw, 7rem);
+  line-height:1;
+  letter-spacing:-0.02em;
+}
+
+.cursor{
+  display:inline-block;
+  color:var(--accent);
+  animation:blink 1s steps(1) infinite;
+}
+@keyframes blink{ 50%{ opacity:0; } }
+
+/* presentable meta block: eyebrow badge + two calm lines */
+.meta{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+.meta__badge{
+  font-size:0.72rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  padding:4px 12px;
+  border-radius:100px;
+}
+.meta__line{
+  color:var(--ink-dim);
+  font-size:clamp(0.82rem, 2vw, 0.95rem);
+  line-height:1.6;
+}
+
+/* footer — sits near the bottom, with breathing room below it */
+.contact{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  padding-bottom:clamp(28px, 6vh, 56px);
+}
+.contact__icons{
+  display:flex;
+  gap:22px;
+}
+.contact__icons a{
+  color:var(--ink-dim);
+  display:inline-flex;
+  transition:color 0.2s, transform 0.2s;
+}
+.contact__icons a:hover, .contact__icons a:focus-visible{
+  color:var(--accent);
+  transform:translateY(-2px);
+}
