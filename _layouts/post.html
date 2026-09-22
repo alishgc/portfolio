@@ -4,7 +4,7 @@ layout: default
 <article class="post">
 
   <header class="post-header">
-    <a class="post__back post__back--top" href="{{ '/blog/' | relative_url }}">← Journal</a>
+    <a class="post__back post__back--top" href="{{ '/blog/' | relative_url }}">← Blog</a>
 
     <div class="post__meta">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
@@ -12,12 +12,12 @@ layout: default
       <span>{{ content | strip_html | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
 
       {% if page.tags.size > 0 %}
-      <span aria-hidden="true">·</span>
+      <!-- <span aria-hidden="true">·</span>
       <div class="post__tags">
         {% for tag in page.tags %}
           <span class="post__tag">{{ tag }}</span>
         {% endfor %}
-      </div>
+      </div> -->
       {% endif %}
 
       <button class="meta-share" data-share
@@ -89,7 +89,7 @@ layout: default
       {% endfor %}
 
       {% if related_count == 0 %}
-        <p class="related-empty">No related posts yet. More will appear here as the journal grows.</p>
+        <p class="related-empty">No related posts yet. More will appear here as the blog grows.</p>
       {% endif %}
     </div>
   </section>
