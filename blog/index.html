@@ -1,0 +1,104 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+<div class="blog-index">
+
+  <header class="blog-hero">
+    <p class="blog-hero__eyebrow">Journal</p>
+    <h1 class="blog-hero__title">Notes, builds<br>&amp; experiments.</h1>
+    <p class="blog-hero__intro">
+      Technical notes, project write-ups, experiments, and things I figure out while building.
+    </p>
+  </header>
+
+  {% if site.posts.size == 0 %}
+    <p class="blog-empty">No posts yet — check back soon.</p>
+  {% else %}
+    <section class="post-list" aria-label="Latest posts">
+      <div class="section-heading">
+        <span>Latest</span>
+        <span class="section-heading__line"></span>
+      </div>
+
+      {% for post in site.posts %}
+      <a class="post-row" href="{{ post.url | relative_url }}">
+        {% if post.thumbnail %}
+        <div class="post-row__media">
+          <img src="{{ post.thumbnail | relative_url }}" alt="" loading="lazy">
+        </div>
+        {% endif %}
+
+        <div class="post-row__content">
+          <p class="post-row__meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            <span aria-hidden="true">·</span>
+            <span>{{ post.content | strip_html | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
+          </p>
+
+          <h2 class="post-row__title">{{ post.title }}</h2>
+
+          {% if post.excerpt %}
+          <p class="post-row__excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+          {% endif %}
+
+          <span class="post-row__cta">
+            Read article
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/>
+              <path d="m13 6 6 6-6 6"/>
+            </svg>
+          </span>
+        </div>
+      </a>
+      {% endfor %}
+    </section>
+
+    {% assign all_tags = "" | split: "" %}
+    {% for post in site.posts %}
+      {% for tag in post.tags %}
+        {% unless all_tags contains tag %}
+          {% assign all_tags = all_tags | push: tag %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+
+    {% if all_tags.size > 0 %}
+    <section class="tag-index" aria-label="Browse by topic">
+      <div class="section-heading">
+        <span>Topics</span>
+        <span class="section-heading__line"></span>
+      </div>
+
+      <div class="tag-list">
+        {% for tag in all_tags %}
+          {% assign tagged_posts = site.posts | where_exp: "post", "post.tags contains tag" %}
+          <a class="tag-link" href="#tag-{{ tag | slugify }}">
+            <span>{{ tag }}</span>
+            <span>{{ tagged_posts.size }}</span>
+          </a>
+        {% endfor %}
+      </div>
+
+      <div class="tagged-posts">
+        {% for tag in all_tags %}
+          {% assign tagged_posts = site.posts | where_exp: "post", "post.tags contains tag" %}
+          <div class="tag-group" id="tag-{{ tag | slugify }}">
+            <h3>{{ tag }}</h3>
+            <div class="tag-group__posts">
+              {% for post in tagged_posts %}
+                <a href="{{ post.url | relative_url }}">
+                  <span>{{ post.title }}</span>
+                  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  {% endif %}
+
+</div>

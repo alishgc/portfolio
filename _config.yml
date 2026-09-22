@@ -1,0 +1,26 @@
+title: "alish.gc"
+description: "Notes from a BIT student in Kathmandu."
+email: hi@alishgc.com.np
+github_username: alishgc
+linkedin_username: alishgc
+
+# Markdown / build
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Clean permalinks: /blog/my-post-title/
+permalink: /blog/:title/
+
+# Don't let Jekyll try to process the local-preview copies or docs
+exclude:
+  - preview/
+  - README.md
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
+
+# No plugins required — everything here uses only what
+# GitHub Pages' default Jekyll build already supports.
+plugins: []

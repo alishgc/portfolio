@@ -1,0 +1,127 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <a class="post__back post__back--top" href="{{ '/blog/' | relative_url }}">← Journal</a>
+
+    <div class="post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ content | strip_html | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
+
+      {% if page.tags.size > 0 %}
+      <span aria-hidden="true">·</span>
+      <div class="post__tags">
+        {% for tag in page.tags %}
+          <span class="post__tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <button class="meta-share" data-share
+              data-share-url="{{ page.url | absolute_url }}"
+              data-share-title="{{ page.title }}"
+              type="button" aria-label="Share this post">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"/>
+          <circle cx="6" cy="12" r="3"/>
+          <circle cx="18" cy="19" r="3"/>
+          <path d="M8.6 10.6 15.4 6.4M8.6 13.4l6.8 4.2"/>
+        </svg>
+        <span>Share</span>
+      </button>
+    </div>
+
+    <h1 class="post__title">{{ page.title }}</h1>
+
+    {% if page.description %}
+      <p class="post__intro">{{ page.description }}</p>
+    {% elsif page.excerpt %}
+      <p class="post__intro">{{ page.excerpt | strip_html | strip_newlines }}</p>
+    {% endif %}
+  </header>
+
+  {% if page.thumbnail %}
+  <figure class="post__hero-wrap">
+    <img class="post__hero" src="{{ page.thumbnail | relative_url }}" alt="" loading="eager">
+  </figure>
+  {% endif %}
+
+  <div class="post__layout">
+    <div class="post__body">
+      {{ content }}
+    </div>
+  </div>
+
+  {% if page.tags.size > 0 %}
+  <section class="post-related" aria-label="Related posts">
+    <div class="section-heading">
+      <span>More on this topic</span>
+      <span class="section-heading__line"></span>
+    </div>
+
+    <div class="related-list">
+      {% assign related_count = 0 %}
+      {% for candidate in site.posts %}
+        {% if candidate.url != page.url %}
+          {% assign shares_tag = false %}
+          {% for tag in page.tags %}
+            {% if candidate.tags contains tag %}
+              {% assign shares_tag = true %}
+            {% endif %}
+          {% endfor %}
+
+          {% if shares_tag and related_count < 3 %}
+          <a class="related-post" href="{{ candidate.url | relative_url }}">
+            <div>
+              <p class="related-post__meta">
+                <time datetime="{{ candidate.date | date_to_xmlschema }}">{{ candidate.date | date: "%b %-d, %Y" }}</time>
+              </p>
+              <h2>{{ candidate.title }}</h2>
+            </div>
+            <span aria-hidden="true">↗</span>
+          </a>
+          {% assign related_count = related_count | plus: 1 %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if related_count == 0 %}
+        <p class="related-empty">No related posts yet. More will appear here as the journal grows.</p>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="post__share-bar">
+    <div>
+      <p class="post__share-label">Found this useful?</p>
+      <p class="post__share-sub">Share it with someone who might like it.</p>
+    </div>
+
+    <div class="post__share-buttons">
+      <a class="share-btn" href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}" target="_blank" rel="noopener" aria-label="Share on X">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M18.24 2H21l-6.6 7.54L22 22h-6.28l-4.92-6.44L4.98 22H2.2l7.06-8.07L2 2h6.44l4.44 5.88L18.24 2Zm-1.1 18h1.53L7.02 3.9H5.37L17.14 20Z"/></svg>
+      </a>
+
+      <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+      </a>
+
+      <button class="share-btn share-btn--copy" data-share
+              data-share-url="{{ page.url | absolute_url }}"
+              data-share-title="{{ page.title }}"
+              type="button" aria-label="Copy link">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.07 0l2-2a5 5 0 0 0-7.07-7.07l-1.14 1.13"/>
+          <path d="M14 11a5 5 0 0 0-7.07 0l-2 2a5 5 0 0 0 7.07 7.07l1.13-1.13"/>
+        </svg>
+        <span class="share-btn__label">Copy link</span>
+      </button>
+    </div>
+  </section>
+
+  <a class="post__back post__back--bottom" href="{{ '/blog/' | relative_url }}">← Back to all posts</a>
+</article>
