@@ -21,7 +21,7 @@ body{
 }
 
 body.home-body {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 a{ color:inherit; text-decoration:none; }
