@@ -1,0 +1,39 @@
+/* Jekyll / Rouge Syntax Highlighting Stylesheet */
+.highlight {
+  background: #0f111a;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 1.5rem 0;
+  border: 1px solid #262938;
+}
+
+.highlight table {
+  margin: 0;
+  border: none;
+  width: auto;
+}
+
+.highlight table td {
+  padding: 0;
+  border: none;
+}
+
+.highlight .rouge-code {
+  background: transparent;
+}
+
+/* Syntax Token Colors */
+.highlight .c, .highlight .cm, .highlight .c1 { color: #6272a4; font-style: italic; } /* Comments */
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr { color: #ff79c6; font-weight: bold; } /* Keywords */
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s1 { color: #f1fa8c; } /* Strings */
+.highlight .na, .highlight .nb, .highlight .bp { color: #50fa7b; } /* Attributes & Builtins */
+.highlight .nc, .highlight .nf, .highlight .no { color: #8be9fd; } /* Classes & Functions */
+.highlight .o, .highlight .ow { color: #ff79c6; } /* Operators */
+.highlight .mi, .highlight .mf, .highlight .mh, .highlight .il { color: #bd93f9; } /* Numbers */
+.highlight .nv, .highlight .vi { color: #8be9fd; } /* Variables */
+.highlight .nn { color: #f8f8f2; }

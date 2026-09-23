@@ -12,13 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let i = 0;
   const stepTime = 190; // ms per word
 
-  progress.style.transition = `width ${greetings.length * stepTime}ms linear`;
-  requestAnimationFrame(() => { progress.style.width = '100%'; });
+  if (progress) {
+    progress.style.transition = `width ${greetings.length * stepTime}ms linear`;
+    requestAnimationFrame(() => { progress.style.width = '100%'; });
+  }
 
   const cycle = setInterval(() => {
     i++;
     if (i < greetings.length) {
-      word.textContent = greetings[i];
+      if (word) word.textContent = greetings[i];
     } else {
       clearInterval(cycle);
       setTimeout(finishLoad, 300);
@@ -26,15 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }, stepTime);
 
   function finishLoad(){
-    preloader.classList.add('is-done');
+    if (preloader) preloader.classList.add('is-done');
     document.body.classList.remove('is-loading');
     startTypewriter();
   }
 
-  // Fallback in case something blocks the interval (e.g. tab backgrounded)
+  // Fallback in case something blocks the interval
   window.addEventListener('load', () => {
     setTimeout(() => {
-      if (!preloader.classList.contains('is-done')) finishLoad();
+      if (preloader && !preloader.classList.contains('is-done')) finishLoad();
     }, 3500);
   });
 
@@ -43,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   =============================== */
   function startTypewriter(){
     const target = document.getElementById('typeTarget');
+    if (!target) return;
     const text = 'Alish';
     let n = 0;
     const type = setInterval(() => {
@@ -50,6 +53,26 @@ document.addEventListener('DOMContentLoaded', () => {
       n++;
       if (n === text.length) clearInterval(type);
     }, 100);
+  }
+
+  /* ===============================
+     THEME TOGGLE — mirrors the blog's dark/light switch
+  =============================== */
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle') || document.querySelector('[data-theme-toggle]');
+
+  function currentTheme(){
+    const explicit = root.getAttribute('data-theme');
+    if (explicit === 'dark' || explicit === 'light') return explicit;
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const next = currentTheme() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
   }
 
 });
