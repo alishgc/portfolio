@@ -297,12 +297,12 @@ body.is-loading{ overflow:hidden; }
     width: min(100% - 36px, var(--blog-max));
     height: 64px;
   }
-  .blog-nav__back{
+  /* .blog-nav__back{
     font-size: 0;
   }
   .blog-nav__back span{
     font-size: .95rem;
-  }
+  } */
   .page{
     padding:20px;
     padding-top: 84px;

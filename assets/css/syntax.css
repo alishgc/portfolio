@@ -12,6 +12,14 @@
   border: 1px solid #262938;
 }
 
+/* Target any outer markdown pre/code wrapper that might be wrapping the highlight box */
+pre:has(> .highlight),
+div.highlighter-rouge {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
 .highlight table {
   margin: 0;
   border: none;

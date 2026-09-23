@@ -800,13 +800,13 @@ body.blog-body {
     height: 64px;
   }
 
-  .blog-nav__back {
+  /* .blog-nav__back {
     font-size: 0;
   }
 
   .blog-nav__back span {
     font-size: .95rem;
-  }
+  } */
 
   .blog-index {
     padding-top: 62px;
