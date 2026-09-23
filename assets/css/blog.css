@@ -573,6 +573,10 @@ body.blog-body {
   font-weight: 700;
 }
 
+/* =========================================
+   Inline code
+   ========================================= */
+
 .post__body code {
   padding: .16em .38em;
   border: 1px solid var(--border);
@@ -582,23 +586,50 @@ body.blog-body {
   font-size: .82em;
 }
 
+/* =========================================
+   Code blocks
+   ========================================= */
+
+/*
+ * Jekyll/Rouge generates a structure similar to:
+ *
+ * <div class="highlighter-rouge">
+ *   <div class="highlight">
+ *     <pre><code>...</code></pre>
+ *   </div>
+ * </div>
+ *
+ * The visible box is handled by .highlight in syntax.css.
+ * Therefore <pre> must NOT have its own box.
+ */
+
 .post__body pre {
   position: relative;
-  margin: 1.7em calc((var(--article-max) - min(var(--article-max), 100vw - 40px)) / -2) 1.7em;
+
+  margin: 1.7em calc(
+    (var(--article-max) - min(var(--article-max), 100vw - 40px)) / -2
+  ) 1.7em;
+
   max-width: calc(100vw - 40px);
-  overflow-x: auto;
-  padding: 20px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: #0d0d0d;
-  color: #e8e8e4;
-  line-height: 1.6;
-  box-shadow: var(--shadow);
+
+  padding: 0;
+
+  border: none;
+  border-radius: 0;
+
+  background: transparent;
+  box-shadow: none;
+
+  overflow: visible;
+
+  color: inherit;
+  line-height: inherit;
 }
 
 .post__body pre code {
   padding: 0;
   border: 0;
+  border-radius: 0;
   background: transparent;
   font-size: .82rem;
 }
@@ -800,13 +831,13 @@ body.blog-body {
     height: 64px;
   }
 
-  /* .blog-nav__back {
+  .blog-nav__back {
     font-size: 0;
   }
 
   .blog-nav__back span {
     font-size: .95rem;
-  } */
+  }
 
   .blog-index {
     padding-top: 62px;
@@ -892,13 +923,18 @@ body.blog-body {
     font-size: 1.5rem;
   }
 
+  /* Code block layout on mobile */
   .post__body pre {
     margin-left: -18px;
     margin-right: -18px;
     max-width: calc(100% + 36px);
-    border-radius: 0;
+  }
+
+  /* The actual visible code box */
+  .post__body .highlight {
     border-left: 0;
     border-right: 0;
+    border-radius: 0;
   }
 
   .post-related {
