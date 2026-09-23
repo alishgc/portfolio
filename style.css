@@ -89,18 +89,17 @@ a{ color:inherit; text-decoration:none; }
    SITE NAV — matches blog.css header layout exactly
 ============================================ */
 .blog-nav{
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: min(var(--blog-max), calc(100% - 40px));
-  margin: 0 auto;
   height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border-soft);
   background: var(--bg);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 50;
   transition: background 0.25s var(--ease), border-color 0.25s var(--ease);
 }
@@ -140,7 +139,7 @@ a{ color:inherit; text-decoration:none; }
 }
 
 .blog-nav__back:hover span {
-  transform: translateX(-3px);
+  transform: translateX(3px);
 }
 
 .theme-toggle{
