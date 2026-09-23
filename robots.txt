@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alishgc.com.np/sitemap.xml

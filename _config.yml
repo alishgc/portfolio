@@ -1,5 +1,7 @@
 title: "alish.gc"
-description: "Blog of Alish GC"
+description: "Personal portfolio and technical blog of Alish G.C."
+url: "https://alishgc.com.np"
+baseurl: ""
 bio: "Tech enthusiast, learning web tools and technology."
 email: hi@alishgc.com.np
 github_username: alishgc
