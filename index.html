@@ -1,64 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>alish.gc</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-  
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CY44R3CDRD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>alish.gc</title>
 
-  gtag('config', 'G-CY44R3CDRD');
-</script>
-</head>
-<body class="home-body is-loading">
+    <!-- Set theme before first paint to avoid a flash -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          if (stored === "dark" || stored === "light") {
+            document.documentElement.setAttribute("data-theme", stored);
+          }
+        } catch (e) {}
+      })();
+    </script>
 
-<a href="/" class="logo">alish<span class="dot">.</span>gc</a>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
 
-<!-- PRELOADER -->
-<div class="preloader" id="preloader">
-  <div class="preloader__word" id="preloaderWord">Hello</div>
-  <div class="preloader__bar"><span id="preloaderProgress"></span></div>
-</div>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CY44R3CDRD"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<main class="page" id="top">
-
-  <div class="center">
-    <h1 class="name">
-      <span class="type-target" id="typeTarget"></span><span class="cursor">_</span>
-    </h1>
-
-    <p class="meta">
-      <span class="meta__badge">BIT Student</span>
-      <span class="meta__line">Amrit Campus, Tribhuvan University</span>
-      <span class="meta__line">Kathmandu, Nepal</span>
-    </p>
-  </div>
-
-  <footer class="contact">
-    <div class="contact__icons">
-      <a href="mailto:hi@alishgc.com.np" aria-label="Email">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+      gtag("config", "G-CY44R3CDRD");
+    </script>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ '/assets/favicon.svg' | relative_url }}"
+    />
+  </head>
+  <body class="home-body is-loading">
+    <!-- SITE NAV — mirrors blog.css styling exactly -->
+    <header class="blog-nav">
+      <a href="/" class="blog-nav__brand" aria-label="Home">
+        alish<span>.</span>gc
       </a>
-      <a href="https://github.com/alishgc" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.5c0 5 3.24 9.24 7.74 10.74.57.1.78-.25.78-.55 0-.27-.01-1-.02-1.96-3.15.68-3.81-1.52-3.81-1.52-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.51-.29-5.15-1.26-5.15-5.6 0-1.24.44-2.25 1.16-3.04-.12-.29-.5-1.45.11-3.02 0 0 .95-.3 3.11 1.16a10.7 10.7 0 0 1 5.66 0c2.16-1.46 3.11-1.16 3.11-1.16.61 1.57.23 2.73.11 3.02.72.79 1.16 1.8 1.16 3.04 0 4.35-2.65 5.31-5.17 5.59.4.35.76 1.03.76 2.08 0 1.5-.01 2.71-.01 3.08 0 .3.2.66.79.55A11.02 11.02 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5Z"/></svg>
-      </a>
-      <a href="https://linkedin.com/in/alishgc" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
-      </a>
+
+      <nav class="blog-nav__right" aria-label="Site navigation">
+        <a href="/blog/" class="blog-nav__back">
+          Blog
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Toggle light/dark theme"
+        >
+          <svg
+            class="icon-sun"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            width="17"
+            height="17"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+            />
+          </svg>
+          <svg
+            class="icon-moon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            width="17"
+            height="17"
+            fill="currentColor"
+          >
+            <path
+              d="M20.7 14.4A8.6 8.6 0 0 1 9.6 3.3 8.7 8.7 0 1 0 20.7 14.4Z"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+      <div class="preloader__word" id="preloaderWord">Hello</div>
+      <div class="preloader__bar"><span id="preloaderProgress"></span></div>
     </div>
-  </footer>
 
-</main>
+    <main class="page" id="top">
+      <div class="center">
+        <h1 class="name">
+          <span class="type-target" id="typeTarget"></span
+          ><span class="cursor">_</span>
+        </h1>
 
-<script src="script.js"></script>
-</body>
+        <p class="meta">
+          <span class="meta__badge">BIT Student</span>
+          <span class="meta__line">Amrit Campus, Tribhuvan University</span>
+          <span class="meta__line">Kathmandu, Nepal</span>
+        </p>
+      </div>
+
+      <footer class="contact">
+        <div class="contact__icons">
+          <a href="mailto:hi@alishgc.com.np" aria-label="Email">
+            <svg
+              viewBox="0 0 24 24"
+              width="28"
+              height="28"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <rect x="2.5" y="4.5" width="19" height="15" rx="2" />
+              <path d="m3 6 9 7 9-7" />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/alishgc"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+              <path
+                d="M12 .5C5.73.5.98 5.24.98 11.5c0 5 3.24 9.24 7.74 10.74.57.1.78-.25.78-.55 0-.27-.01-1-.02-1.96-3.15.68-3.81-1.52-3.81-1.52-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.51-.29-5.15-1.26-5.15-5.6 0-1.24.44-2.25 1.16-3.04-.12-.29-.5-1.45.11-3.02 0 0 .95-.3 3.11 1.16a10.7 10.7 0 0 1 5.66 0c2.16-1.46 3.11-1.16 3.11-1.16.61 1.57.23 2.73.11 3.02.72.79 1.16 1.8 1.16 3.04 0 4.35-2.65 5.31-5.17 5.59.4.35.76 1.03.76 2.08 0 1.5-.01 2.71-.01 3.08 0 .3.2.66.79.55A11.02 11.02 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5Z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://linkedin.com/in/alishgc"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+              <path
+                d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>

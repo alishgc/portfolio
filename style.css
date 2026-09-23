@@ -1,13 +1,65 @@
+/* ============================================
+   TOKENS — shared with the blog
+============================================ */
 :root {
-  --bg:        #0f111a; 
-  --surface:   #181a24; 
-  --border:    #262938;
-  --ink:       #f0ede6;
-  --ink-dim:   #a0a6b8;
-  --accent:    #f5a73b;
-
+  --blog-max: 1040px;
+  --article-max: 720px;
+  --radius: 12px;
+  --radius-sm: 8px;
+  
   --font-display: 'Space Grotesk', sans-serif;
   --font-mono:    'IBM Plex Mono', monospace;
+
+  /* Default/Dark mode warm accent */
+  --accent-warm: #e8964a;
+
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+/* default (no explicit choice, no system preference match) = dark */
+:root,
+:root[data-theme="dark"] {
+  --bg:        #0a0a0a;
+  --surface:   #111111;
+  --surface-2: #171717;
+  --border:    #272727;
+  --border-soft:#1d1d1d;
+  --ink:       #f4f4f2;
+  --ink-dim:   #8c8c87;
+  --ink-faint: #5e5e59;
+  --accent:    #f4f4f2;
+  --accent-contrast: #0a0a0a;
+  --accent-warm: #e8964a;
+}
+
+:root[data-theme="light"] {
+  --bg:        #f5f4f0;
+  --surface:   #faf9f6;
+  --surface-2: #eeece6;
+  --border:    #dedbd2;
+  --border-soft:#e8e5dd;
+  --ink:       #242421;
+  --ink-dim:   #74736d;
+  --ink-faint: #99978f;
+  --accent:    #242421;
+  --accent-contrast: #faf9f6;
+  --accent-warm: #334155; /* Sophisticated slate tone that pops cleanly on light backgrounds */
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg:        #f5f4f0;
+    --surface:   #faf9f6;
+    --surface-2: #eeece6;
+    --border:    #dedbd2;
+    --border-soft:#e8e5dd;
+    --ink:       #242421;
+    --ink-dim:   #74736d;
+    --ink-faint: #99978f;
+    --accent:    #242421;
+    --accent-contrast: #faf9f6;
+    --accent-warm: #334155;
+  }
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -18,6 +70,7 @@ body{
   background:var(--bg);
   color:var(--ink);
   font-family:var(--font-mono);
+  transition:background 0.25s var(--ease), color 0.25s var(--ease);
 }
 
 body.home-body {
@@ -26,26 +79,103 @@ body.home-body {
 
 a{ color:inherit; text-decoration:none; }
 
-::selection{ background:var(--accent); color:#12141c; }
+::selection{ background:var(--accent-warm); color:#0a0a0a; }
 
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
 }
 
 /* ============================================
-   LOGO — fixed top-left
+   SITE NAV — matches blog.css header layout exactly
 ============================================ */
-.logo{
-  position:fixed;
-  top:24px;
-  left:24px;
-  z-index:50;
-  font-family:var(--font-display);
-  font-weight:600;
-  font-size:1.05rem;
-  color:var(--ink);
+.blog-nav{
+  width: min(var(--blog-max), calc(100% - 40px));
+  margin: 0 auto;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: background 0.25s var(--ease), border-color 0.25s var(--ease);
 }
-.logo .dot{ color:var(--accent); }
+
+/* brand mark — portfolio's original wordmark styling */
+.blog-nav__brand{
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -.035em;
+  color: var(--ink);
+}
+.blog-nav__brand span{ color: var(--accent-warm); }
+
+.blog-nav__right{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.blog-nav__back{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink-dim);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .72rem;
+  transition: color .2s ease;
+}
+
+.blog-nav__back span {
+  transition: transform .2s var(--ease);
+}
+
+.blog-nav__back:hover{
+  color: var(--ink);
+}
+
+.blog-nav__back:hover span {
+  transform: translateX(-3px);
+}
+
+.theme-toggle{
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink-dim);
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible{
+  color: var(--ink);
+  border-color: var(--ink-dim);
+  transform: rotate(-8deg);
+}
+
+.theme-toggle svg{ display:block; }
+
+/* show sun in dark mode, moon in light mode */
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon{ display:none; }
+
+:root[data-theme="dark"] .theme-toggle .icon-sun{ display:block; }
+:root[data-theme="light"] .theme-toggle .icon-moon{ display:block; }
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .theme-toggle .icon-moon{ display:block; }
+}
 
 /* ============================================
    PRELOADER — multilingual greeting
@@ -55,7 +185,7 @@ a{ color:inherit; text-decoration:none; }
   background:var(--bg);
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   gap:22px;
-  transition:transform 0.8s cubic-bezier(.76,0,.24,1);
+  transition:transform 0.8s cubic-bezier(.76,0,.24,1), background 0.25s var(--ease);
 }
 .preloader.is-done{ transform:translateY(-100%); }
 
@@ -68,7 +198,7 @@ a{ color:inherit; text-decoration:none; }
 .preloader__bar{
   width:min(180px, 40vw);
   height:2px;
-  background:rgba(234,230,221,0.15);
+  background:var(--border);
   border-radius:2px;
   overflow:hidden;
 }
@@ -76,7 +206,7 @@ a{ color:inherit; text-decoration:none; }
   display:block;
   height:100%;
   width:0%;
-  background:var(--accent);
+  background:var(--accent-warm);
 }
 
 body.is-loading{ overflow:hidden; }
@@ -90,6 +220,7 @@ body.is-loading{ overflow:hidden; }
   flex-direction:column;
   align-items:center;
   padding:24px;
+  padding-top: 96px; /* clears fixed nav */
 }
 
 .center{
@@ -112,12 +243,11 @@ body.is-loading{ overflow:hidden; }
 
 .cursor{
   display:inline-block;
-  color:var(--accent);
+  color:var(--accent-warm);
   animation:blink 1s steps(1) infinite;
 }
 @keyframes blink{ 50%{ opacity:0; } }
 
-/* presentable meta block: eyebrow badge + two calm lines */
 .meta{
   display:flex;
   flex-direction:column;
@@ -128,8 +258,8 @@ body.is-loading{ overflow:hidden; }
   font-size:0.72rem;
   letter-spacing:0.14em;
   text-transform:uppercase;
-  color:var(--accent);
-  border:1px solid var(--accent);
+  color:var(--accent-warm);
+  border:1px solid var(--border);
   padding:4px 12px;
   border-radius:100px;
 }
@@ -139,7 +269,6 @@ body.is-loading{ overflow:hidden; }
   line-height:1.6;
 }
 
-/* footer — sits near the bottom, with breathing room below it */
 .contact{
   display:flex;
   flex-direction:column;
@@ -157,6 +286,30 @@ body.is-loading{ overflow:hidden; }
   transition:color 0.2s, transform 0.2s;
 }
 .contact__icons a:hover, .contact__icons a:focus-visible{
-  color:var(--accent);
+  color:var(--accent-warm);
   transform:translateY(-2px);
+}
+
+/* ============================================
+   RESPONSIVE — tablet / mobile
+============================================ */
+@media (max-width: 600px){
+  .blog-nav{
+    width: min(100% - 36px, var(--blog-max));
+    height: 64px;
+  }
+  .blog-nav__back{
+    font-size: 0;
+  }
+  .blog-nav__back span{
+    font-size: .95rem;
+  }
+  .page{
+    padding:20px;
+    padding-top: 84px;
+  }
+  .theme-toggle{
+    width:30px;
+    height:30px;
+  }
 }

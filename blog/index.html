@@ -68,31 +68,6 @@ permalink: /blog/
       {% endfor %}
     {% endfor %}
 
-   <section class="blog-about" aria-labelledby="about-title">
-  <div class="blog-about__content">
-    <p class="blog-about__eyebrow">About</p>
-
-    <h2 id="about-title">{{ site.title }}</h2>
-
-    <p class="blog-about__description">{{ site.description }}</p>
-
-    <p class="blog-about__bio">{{ site.bio }}</p>
-
-    <div class="blog-about__links">
-      {% if site.email %}
-        <a href="mailto:{{ site.email }}">Email</a>
-      {% endif %}
-
-      {% if site.github_username %}
-        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub</a>
-      {% endif %}
-
-      {% if site.linkedin_username %}
-        <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      {% endif %}
-    </div>
-  </div>
-</section>
 
   {% endif %}
 
