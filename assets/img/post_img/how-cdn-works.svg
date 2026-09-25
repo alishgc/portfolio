@@ -1,1 +1,167 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" width="100%" role="img" aria-label="Animated diagram of how a CDN works, cycling through a cache hit, a cache miss, and an expired cache entry"><title>How a CDN Works</title><style>.cdn-svg{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}.title{font-size:24px;font-weight:700;fill:#16181d;letter-spacing:-.5px}.subtitle{font-size:14px;fill:#6b7280}.box-title{font-size:15px;font-weight:700;fill:#16181d}.box-sub{font-size:12px;fill:#6b7280}.lbl{font-size:12px;font-weight:600;fill:#374151}.lbl-sub{font-size:10.5px;fill:#6b7280;text-anchor:middle}.line{stroke:#374151;stroke-width:1.5;fill:none}.line-green{stroke:#10b981;stroke-width:2;fill:none}.dot{fill:#2563eb;stroke:#fff;stroke-width:2}.pill-base{fill:none;stroke:#d1d5db;stroke-width:1}.pill-label{font-size:11px;font-weight:700;fill:#4b5563;text-anchor:middle}</style><g class="cdn-svg"><text class="title" x="450" y="45" text-anchor="middle">How a CDN Works</text><text class="subtitle" x="450" y="70" text-anchor="middle">Faster delivery. Closer to you.</text><g transform="translate(60, 130)"><path d="M12 12h76a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z" fill="#374151" rx="4"/><rect x="16" y="16" width="68" height="32" rx="2" fill="#e5e7eb"/><circle cx="50" cy="32" r="10" fill="none" stroke="#9ca3af" stroke-width="1.5"/><path d="M40 32h20M50 22v20" stroke="#9ca3af" stroke-width="1.5"/><path d="M2 60h96a2 2 0 0 1 2 2v2H0v-2a2 2 0 0 1 2-2z" fill="#9ca3af" rx="1"/><text class="box-title" x="50" y="85" text-anchor="middle">User</text></g><g transform="translate(370, 120)"><path d="M55 70 c-18 0 -33 -13 -35 -30 c-15 -3 -25 -16 -23 -31 c2 -14 15 -24 30 -24 c4 -12 16 -20 29 -20 c15 0 28 10 32 24 c13 -2 26 6 30 19 c4 13 -1 27 -13 33 c-2 2 -4 3 -6 4 z" fill="#dbeafe" transform="translate(15, 10) scale(1.2)"/><circle cx="95" cy="55" r="26" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/><circle cx="95" cy="55" r="18" fill="none" stroke="#3b82f6" stroke-width="1.5"/><path d="M77 55h36M95 37v36" stroke="#3b82f6" stroke-width="1.5"/><rect x="10" y="0" width="30" height="20" rx="3" fill="#1e3a8a"/><circle cx="17" cy="7" r="1.5" fill="#60a5fa"/><line x1="22" y1="7" x2="26" y2="7" stroke="#93c5fd" stroke-width="1.5"/><circle cx="17" cy="13" r="1.5" fill="#60a5fa"/><line x1="22" y1="13" x2="26" y2="13" stroke="#93c5fd" stroke-width="1.5"/><rect x="150" y="0" width="30" height="20" rx="3" fill="#1e3a8a"/><circle cx="157" cy="7" r="1.5" fill="#60a5fa"/><line x1="162" y1="7" x2="166" y2="7" stroke="#93c5fd" stroke-width="1.5"/><circle cx="157" cy="13" r="1.5" fill="#60a5fa"/><line x1="162" y1="13" x2="166" y2="13" stroke="#93c5fd" stroke-width="1.5"/><rect x="10" y="80" width="30" height="20" rx="3" fill="#1e3a8a"/><circle cx="17" cy="87" r="1.5" fill="#60a5fa"/><line x1="22" y1="87" x2="26" y2="87" stroke="#93c5fd" stroke-width="1.5"/><circle cx="17" cy="93" r="1.5" fill="#60a5fa"/><line x1="22" y1="93" x2="26" y2="93" stroke="#93c5fd" stroke-width="1.5"/><rect x="150" y="80" width="30" height="20" rx="3" fill="#1e3a8a"/><circle cx="157" cy="87" r="1.5" fill="#60a5fa"/><line x1="162" y1="87" x2="166" y2="87" stroke="#93c5fd" stroke-width="1.5"/><circle cx="157" cy="93" r="1.5" fill="#60a5fa"/><line x1="162" y1="93" x2="166" y2="93" stroke="#93c5fd" stroke-width="1.5"/><text class="box-title" x="95" y="125" text-anchor="middle">CDN</text><text class="box-sub" x="95" y="142" text-anchor="middle">(Global Edge Servers)</text></g><g transform="translate(730, 130)"><rect x="0" y="0" width="60" height="80" rx="6" fill="#374151"/><rect x="6" y="10" width="48" height="16" rx="3" fill="#1f2937"/><circle cx="14" cy="18" r="2" fill="#10b981"/><line x1="40" y1="18" x2="48" y2="18" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/><rect x="6" y="32" width="48" height="16" rx="3" fill="#1f2937"/><circle cx="14" cy="40" r="2" fill="#10b981"/><line x1="40" y1="40" x2="48" y2="40" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/><rect x="6" y="54" width="48" height="16" rx="3" fill="#1f2937"/><circle cx="14" cy="62" r="2" fill="#10b981"/><line x1="40" y1="62" x2="48" y2="62" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/><text class="box-title" x="30" y="105" text-anchor="middle">Origin Server</text></g><defs><path id="pReq" d="M 170 160 L 360 160"/><path id="pSrv" d="M 360 195 L 170 195"/><path id="pMiss" d="M 560 160 L 720 160"/><path id="pBack" d="M 720 195 L 560 195"/></defs><use href="#pReq" class="line" marker-end="url(#arrow)"/><text class="lbl" x="265" y="145" text-anchor="middle">1. Request</text><text class="lbl-sub" x="265" y="178">(e.g. website / file)</text><use href="#pSrv" class="line-green" marker-end="url(#arrowGreen)"/><text class="lbl" x="265" y="218" fill="#047857" text-anchor="middle">4. Serve to user</text><text class="lbl-sub" x="265" y="234">(faster, from nearby edge)</text><use href="#pMiss" class="line" stroke-dasharray="4 4" marker-end="url(#arrow)"/><text class="lbl" x="640" y="145" text-anchor="middle">2. If not cached</text><text class="lbl-sub" x="640" y="178">(fetch from origin)</text><use href="#pBack" class="line-green" marker-end="url(#arrowGreen)"/><text class="lbl" x="640" y="218" fill="#047857" text-anchor="middle">3. Return to CDN</text><text class="lbl-sub" x="640" y="234">(and cache it)</text><defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="#374151"/></marker><marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="#10b981"/></marker></defs><g><rect class="pill-base" x="375" y="380" width="65" height="24" rx="12"/><rect x="375" y="380" width="65" height="24" rx="12" fill="#e3f6ec" stroke="#10b981" opacity="0"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.95;1" dur="1.65s" begin="reqHit.begin" fill="freeze"/></rect><text class="pill-label" x="407" y="396" fill="#10b981" opacity="1">Hit</text><rect class="pill-base" x="450" y="380" width="70" height="24" rx="12"/><rect x="450" y="380" width="70" height="24" rx="12" fill="#eef0f3" stroke="#6b7280" opacity="0"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.95;1" dur="3.55s" begin="reqMiss.begin" fill="freeze"/></rect><text class="pill-label" x="485" y="396" fill="#4b5563" opacity="1">Miss</text><rect class="pill-base" x="530" y="380" width="85" height="24" rx="12"/><rect x="530" y="380" width="85" height="24" rx="12" fill="#fef3c7" stroke="#d97706" opacity="0"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.95;1" dur="3.55s" begin="reqExp.begin" fill="freeze"/></rect><text class="pill-label" x="572" y="396" fill="#d97706" opacity="1">Expired</text></g><circle class="dot" r="6" opacity="0"><animateMotion id="reqHit" dur="0.7s" begin="0s; srvExp.end+0.8s" fill="freeze"><mpath href="#pReq"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="reqHit.begin" fill="freeze"/></circle><circle class="dot" r="6" fill="#10b981" opacity="0"><animateMotion id="srvHit" dur="0.7s" begin="reqHit.end+0.25s" fill="freeze"><mpath href="#pSrv"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="srvHit.begin" fill="freeze"/></circle><circle class="dot" r="6" opacity="0"><animateMotion id="reqMiss" dur="0.7s" begin="srvHit.end+0.6s" fill="freeze"><mpath href="#pReq"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="reqMiss.begin" fill="freeze"/></circle><circle class="dot" r="6" opacity="0"><animateMotion id="missGo" dur="0.7s" begin="reqMiss.end+0.25s" fill="freeze"><mpath href="#pMiss"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="missGo.begin" fill="freeze"/></circle><circle class="dot" r="6" fill="#10b981" opacity="0"><animateMotion id="missBack" dur="0.7s" begin="missGo.end+0.25s" fill="freeze"><mpath href="#pBack"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="missBack.begin" fill="freeze"/></circle><circle class="dot" r="6" fill="#10b981" opacity="0"><animateMotion id="srvMiss" dur="0.7s" begin="missBack.end+0.25s" fill="freeze"><mpath href="#pSrv"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="srvMiss.begin" fill="freeze"/></circle><circle class="dot" r="6" opacity="0"><animateMotion id="reqExp" dur="0.7s" begin="srvMiss.end+0.6s" fill="freeze"><mpath href="#pReq"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="reqExp.begin" fill="freeze"/></circle><circle class="dot" r="6" fill="#d97706" opacity="0"><animateMotion id="expGo" dur="0.7s" begin="reqExp.end+0.25s" fill="freeze"><mpath href="#pMiss"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="expGo.begin" fill="freeze"/></circle><circle class="dot" r="6" fill="#10b981" opacity="0"><animateMotion id="expBack" dur="0.7s" begin="expGo.end+0.25s" fill="freeze"><mpath href="#pBack"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="expBack.begin" fill="freeze"/></circle><circle class="dot" r="6" fill="#10b981" opacity="0"><animateMotion id="srvExp" dur="0.7s" begin="expBack.end+0.25s" fill="freeze"><mpath href="#pSrv"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="srvExp.begin" fill="freeze"/></circle></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" width="100%" role="img" aria-label="Animated diagram of how a CDN works, cycling through a cache hit, a cache miss, and an expired cache entry">
+  <title>How a CDN Works</title>
+  <style>
+    .cdn-svg { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .title { font-size: 24px; font-weight: 700; fill: #16181d; letter-spacing: -.5px; }
+    .subtitle { font-size: 14px; fill: #6b7280; }
+    .box-title { font-size: 15px; font-weight: 700; fill: #16181d; }
+    .box-sub { font-size: 12px; fill: #6b7280; }
+    .lbl { font-size: 12px; font-weight: 600; fill: #374151; }
+    .lbl-sub { font-size: 10.5px; fill: #6b7280; text-anchor: middle; }
+    .line { stroke: #374151; stroke-width: 1.5; fill: none; }
+    .line-green { stroke: #10b981; stroke-width: 2; fill: none; }
+    .dot { fill: #2563eb; stroke: #fff; stroke-width: 2; }
+    .pill-base { fill: none; stroke: #d1d5db; stroke-width: 1; }
+    .pill-label { font-size: 11px; font-weight: 700; fill: #4b5563; text-anchor: middle; }
+  </style>
+
+  <!-- Background Layer (Light Only) -->
+  <rect width="900" height="450" fill="#ffffff" />
+
+  <g class="cdn-svg">
+    <text class="title" x="450" y="45" text-anchor="middle">How a CDN Works</text>
+    <text class="subtitle" x="450" y="70" text-anchor="middle">Faster delivery. Closer to you.</text>
+
+    <!-- User Node -->
+    <g transform="translate(60, 130)">
+      <path d="M12 12h76a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z" fill="#374151" rx="4"/>
+      <rect x="16" y="16" width="68" height="32" rx="2" fill="#e5e7eb"/>
+      <circle cx="50" cy="32" r="10" fill="none" stroke="#9ca3af" stroke-width="1.5"/>
+      <path d="M40 32h20M50 22v20" stroke="#9ca3af" stroke-width="1.5"/>
+      <path d="M2 60h96a2 2 0 0 1 2 2v2H0v-2a2 2 0 0 1 2-2z" fill="#9ca3af" rx="1"/>
+      <text class="box-title" x="50" y="85" text-anchor="middle">User</text>
+    </g>
+
+    <!-- CDN Edge Node -->
+    <g transform="translate(370, 120)">
+      <path d="M55 70 c-18 0 -33 -13 -35 -30 c-15 -3 -25 -16 -23 -31 c2 -14 15 -24 30 -24 c4 -12 16 -20 29 -20 c15 0 28 10 32 24 c13 -2 26 6 30 19 c4 13 -1 27 -13 33 c-2 2 -4 3 -6 4 z" fill="#dbeafe" transform="translate(15, 10) scale(1.2)"/>
+      <circle cx="95" cy="55" r="26" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+      <circle cx="95" cy="55" r="18" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+      <path d="M77 55h36M95 37v36" stroke="#3b82f6" stroke-width="1.5"/>
+      <rect x="10" y="0" width="30" height="20" rx="3" fill="#1e3a8a"/>
+      <circle cx="17" cy="7" r="1.5" fill="#60a5fa"/><line x1="22" y1="7" x2="26" y2="7" stroke="#93c5fd" stroke-width="1.5"/>
+      <circle cx="17" cy="13" r="1.5" fill="#60a5fa"/><line x1="22" y1="13" x2="26" y2="13" stroke="#93c5fd" stroke-width="1.5"/>
+      <rect x="150" y="0" width="30" height="20" rx="3" fill="#1e3a8a"/>
+      <circle cx="157" cy="7" r="1.5" fill="#60a5fa"/><line x1="162" y1="7" x2="166" y2="7" stroke="#93c5fd" stroke-width="1.5"/>
+      <circle cx="157" cy="13" r="1.5" fill="#60a5fa"/><line x1="162" y1="13" x2="166" y2="13" stroke="#93c5fd" stroke-width="1.5"/>
+      <rect x="10" y="80" width="30" height="20" rx="3" fill="#1e3a8a"/>
+      <circle cx="17" cy="87" r="1.5" fill="#60a5fa"/><line x1="22" y1="87" x2="26" y2="87" stroke="#93c5fd" stroke-width="1.5"/>
+      <circle cx="17" cy="93" r="1.5" fill="#60a5fa"/><line x1="22" y1="93" x2="26" y2="93" stroke="#93c5fd" stroke-width="1.5"/>
+      <rect x="150" y="80" width="30" height="20" rx="3" fill="#1e3a8a"/>
+      <circle cx="157" cy="87" r="1.5" fill="#60a5fa"/><line x1="162" y1="87" x2="166" y2="87" stroke="#93c5fd" stroke-width="1.5"/>
+      <circle cx="157" cy="93" r="1.5" fill="#60a5fa"/><line x1="162" y1="93" x2="166" y2="93" stroke="#93c5fd" stroke-width="1.5"/>
+      <text class="box-title" x="95" y="125" text-anchor="middle">CDN</text>
+      <text class="box-sub" x="95" y="142" text-anchor="middle">(Global Edge Servers)</text>
+    </g>
+
+    <!-- Origin Server Node -->
+    <g transform="translate(730, 130)">
+      <rect x="0" y="0" width="60" height="80" rx="6" fill="#374151"/>
+      <rect x="6" y="10" width="48" height="16" rx="3" fill="#1f2937"/>
+      <circle cx="14" cy="18" r="2" fill="#10b981"/>
+      <line x1="40" y1="18" x2="48" y2="18" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
+      <rect x="6" y="32" width="48" height="16" rx="3" fill="#1f2937"/>
+      <circle cx="14" cy="40" r="2" fill="#10b981"/>
+      <line x1="40" y1="40" x2="48" y2="40" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
+      <rect x="6" y="54" width="48" height="16" rx="3" fill="#1f2937"/>
+      <circle cx="14" cy="62" r="2" fill="#10b981"/>
+      <line x1="40" y1="62" x2="48" y2="62" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
+      <text class="box-title" x="30" y="105" text-anchor="middle">Origin Server</text>
+    </g>
+
+    <defs>
+      <path id="pReq" d="M 170 160 L 360 160"/>
+      <path id="pSrv" d="M 360 195 L 170 195"/>
+      <path id="pMiss" d="M 560 160 L 720 160"/>
+      <path id="pBack" d="M 720 195 L 560 195"/>
+    </defs>
+
+    <use href="#pReq" class="line" marker-end="url(#arrow)"/>
+    <text class="lbl" x="265" y="145" text-anchor="middle">1. Request</text>
+    <text class="lbl-sub" x="265" y="178">(website / file)</text>
+
+    <use href="#pSrv" class="line-green" marker-end="url(#arrowGreen)"/>
+    <text class="lbl" x="265" y="218" fill="#047857" text-anchor="middle">4. Serve to user</text>
+    <text class="lbl-sub" x="265" y="234">(faster, from nearby edge)</text>
+
+    <use href="#pMiss" class="line" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+    <text class="lbl" x="640" y="145" text-anchor="middle">2. If not cached</text>
+    <text class="lbl-sub" x="640" y="178">(fetch from origin)</text>
+
+    <use href="#pBack" class="line-green" marker-end="url(#arrowGreen)"/>
+    <text class="lbl" x="640" y="218" fill="#047857" text-anchor="middle">3. Return to CDN</text>
+    <text class="lbl-sub" x="640" y="234">(and cache it)</text>
+
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="#374151"/>
+      </marker>
+      <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="#10b981"/>
+      </marker>
+    </defs>
+
+    <!-- Status Pills -->
+    <g>
+      <rect class="pill-base" x="375" y="380" width="65" height="24" rx="12"/>
+      <rect x="375" y="380" width="65" height="24" rx="12" fill="#e3f6ec" stroke="#10b981" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.95;1" dur="1.65s" begin="reqHit.begin" fill="freeze"/>
+      </rect>
+      <text class="pill-label" x="407" y="396" fill="#10b981" opacity="1">Hit</text>
+
+      <rect class="pill-base" x="450" y="380" width="70" height="24" rx="12"/>
+      <rect x="450" y="380" width="70" height="24" rx="12" fill="#eef0f3" stroke="#6b7280" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.95;1" dur="3.55s" begin="reqMiss.begin" fill="freeze"/>
+      </rect>
+      <text class="pill-label" x="485" y="396" fill="#4b5563" opacity="1">Miss</text>
+
+      <rect class="pill-base" x="530" y="380" width="85" height="24" rx="12"/>
+      <rect x="530" y="380" width="85" height="24" rx="12" fill="#fef3c7" stroke="#d97706" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.95;1" dur="3.55s" begin="reqExp.begin" fill="freeze"/>
+      </rect>
+      <text class="pill-label" x="572" y="396" fill="#d97706" opacity="1">Expired</text>
+    </g>
+
+    <!-- Animation Dots -->
+    <circle class="dot" r="6" opacity="0">
+      <animateMotion id="reqHit" dur="0.7s" begin="0s; srvExp.end+0.8s" fill="freeze"><mpath href="#pReq"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="reqHit.begin" fill="freeze"/>
+    </circle>
+    <circle class="dot" r="6" fill="#10b981" opacity="0">
+      <animateMotion id="srvHit" dur="0.7s" begin="reqHit.end+0.25s" fill="freeze"><mpath href="#pSrv"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="srvHit.begin" fill="freeze"/>
+    </circle>
+    <circle class="dot" r="6" opacity="0">
+      <animateMotion id="reqMiss" dur="0.7s" begin="srvHit.end+0.6s" fill="freeze"><mpath href="#pReq"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="reqMiss.begin" fill="freeze"/>
+    </circle>
+    <circle class="dot" r="6" opacity="0">
+      <animateMotion id="missGo" dur="0.7s" begin="reqMiss.end+0.25s" fill="freeze"><mpath href="#pMiss"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="missGo.begin" fill="freeze"/>
+    </circle>
+    <circle class="dot" r="6" fill="#10b981" opacity="0">
+      <animateMotion id="missBack" dur="0.7s" begin="missGo.end+0.25s" fill="freeze"><mpath href="#pBack"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="missBack.begin" fill="freeze"/>
+    </circle>
+    <circle class="dot" r="6" fill="#10b981" opacity="0">
+      <animateMotion id="srvMiss" dur="0.7s" begin="missBack.end+0.25s" fill="freeze"><mpath href="#pSrv"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="srvMiss.begin" fill="freeze"/>
+    </circle>
+    <circle class="dot" r="6" opacity="0">
+      <animateMotion id="reqExp" dur="0.7s" begin="srvMiss.end+0.6s" fill="freeze"><mpath href="#pReq"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="reqExp.begin" fill="freeze"/>
+    </circle>
+    <circle class="dot" r="6" fill="#d97706" opacity="0">
+      <animateMotion id="expGo" dur="0.7s" begin="reqExp.end+0.25s" fill="freeze"><mpath href="#pMiss"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="expGo.begin" fill="freeze"/>
+    </circle>
+    <circle class="dot" r="6" fill="#10b981" opacity="0">
+      <animateMotion id="expBack" dur="0.7s" begin="expGo.end+0.25s" fill="freeze"><mpath href="#pBack"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="expBack.begin" fill="freeze"/>
+    </circle>
+    <circle class="dot" r="6" fill="#10b981" opacity="0">
+      <animateMotion id="srvExp" dur="0.7s" begin="expBack.end+0.25s" fill="freeze"><mpath href="#pSrv"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.7s" begin="srvExp.begin" fill="freeze"/>
+    </circle>
+  </g>
+</svg>
