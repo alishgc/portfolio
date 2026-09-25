@@ -2,7 +2,7 @@
 layout: post
 title: "How CDNs Actually Work and what I learned building a tiny one"
 date: 2026-09-23 10:05:43 +0545
-thumbnail:
+thumbnail:/assets/img/post_img/how-cdn-works.svg
 excerpt: "A plain-language look at how CDNs work, origin servers, edge caching, TTL, load balancing, plus what I learned building a small CDN simulator in Node.js."
 ---
 
